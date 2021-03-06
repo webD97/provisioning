@@ -1,0 +1,19 @@
+---
+  - name: Ensure key
+    apt_key:
+      id: 1FCD77DD0DBEF5699AD2610160EE47FBAD3DD469
+      url: https://keyserver.ubuntu.com/
+      state: present
+
+  - name: Ensure PPA
+    apt_repository:
+      repo: deb http://ppa.launchpad.net/nextcloud-devs/client/ubuntu {{ ansible_local['ubuntu_codename']['ubuntu_codename'] }} main 
+      state: present
+  
+  - name: Ensure Nextcloud installed
+    apt:
+      update_cache: yes
+      name:
+       - nemo-nextcloud
+       - nextcloud-client
+      state: latest

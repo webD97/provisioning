@@ -1,0 +1,16 @@
+---
+  - name: Ensure custom facts directory
+    file:
+      path: /etc/ansible/facts.d
+      state: directory
+  
+  - name: Ensure custom facts files
+    copy:
+      src: files/ubuntu_codename.fact
+      dest: /etc/ansible/facts.d/ubuntu_codename.fact
+      mode: 0755
+    register: codename
+  
+  - name: Re-run setup to use custom facts
+    setup: ~
+    when: codename.changed

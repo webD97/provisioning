@@ -1,0 +1,16 @@
+---
+  - name: Ensure key
+    apt_key:
+      id: D89C66D0E31FEA2874EBD20561922AB60068FCD6
+      url: https://keyserver.ubuntu.com/
+      state: present
+
+  - name: Ensure repository
+    apt_repository:
+      repo: deb http://ppa.launchpad.net/phoerious/keepassxc/ubuntu {{ ansible_local['ubuntu_codename']['ubuntu_codename'] }} main
+      state: present
+  
+  - name: Ensure KeepassXC installed
+    apt:
+      name: keepassxc
+      state: latest

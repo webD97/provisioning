@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source /etc/os-release
+
+if [[ -z "$UBUNTU_CODENAME" ]]; then
+  exit 1
+fi
+
+cat <<EOF
+{ "ubuntu_codename": "$UBUNTU_CODENAME" }
+EOF

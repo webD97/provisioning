@@ -1,0 +1,30 @@
+---
+  - name: Ensure Desktop directory
+    lineinfile:
+      path: /home/christian/.config/user-dirs.dirs
+      regexp: '^XDG_DESKTOP_DIR='
+      line: XDG_DESKTOP_DIR="$HOME/Nextcloud/Desktop"
+  
+  - name: Ensure Documents directory
+    lineinfile:
+      path: /home/christian/.config/user-dirs.dirs
+      regexp: '^XDG_DOCUMENTS_DIR='
+      line: XDG_DOCUMENTS_DIR="$HOME/Nextcloud/Dokumente"
+  
+  - name: Ensure Music directory
+    lineinfile:
+      path: /home/christian/.config/user-dirs.dirs
+      regexp: '^XDG_MUSIC_DIR='
+      line: XDG_MUSIC_DIR="$HOME/Nextcloud/Musik"
+  
+  - name: Ensure Pictures directory
+    lineinfile:
+      path: /home/christian/.config/user-dirs.dirs
+      regexp: '^XDG_PICTURES_DIR='
+      line: XDG_PICTURES_DIR="$HOME/Nextcloud/Bilder"
+  
+  - name: Ensure Videos directory
+    lineinfile:
+      path: /home/christian/.config/user-dirs.dirs
+      regexp: '^XDG_VIDEOS_DIR='
+      line: XDG_VIDEOS_DIR="$HOME/Nextcloud/Videos"

@@ -1,0 +1,15 @@
+---
+  - name: Setup my machine
+    hosts: all
+    become: yes
+    roles:
+      - custom-facts
+      - docker
+      - vscode
+      - nodejs
+      - keepassxc
+      - nextcloud
+      - steam
+      - xdg-dirs
+      - lutris
+      - graalvm

@@ -1,0 +1,5 @@
+---
+  - name: Download and install Steam
+    apt:
+      name: steam
+      state: present
